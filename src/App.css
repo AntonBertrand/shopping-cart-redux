@@ -1,0 +1,34 @@
+img {
+  width: 200px;
+}
+
+.products {
+  width: 100%;
+  background: rgb(240, 240, 240);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 2rem;
+}
+
+.products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10rem;
+}
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navigation {
+  background: rgb(29, 29, 29);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
