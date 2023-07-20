@@ -32,3 +32,9 @@ img {
   justify-content: space-around;
   align-items: center;
 }
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}

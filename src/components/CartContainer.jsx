@@ -6,9 +6,9 @@ import CartItem from './CartItem';
 const CartContainer = () => {
 
     const dispatch = useDispatch();
-    const { cartItems, total, amount } = useSelector((store) => store.cart);
+    const { cartItems, total, quantity } = useSelector((store) => store.cart);
   
-    if (amount < 1 ) {
+    if (quantity < 1 ) {
     return (
     <div className='cart'>
 
@@ -29,7 +29,7 @@ const CartContainer = () => {
     </div>
 
     <div className="cart-footer">
-        <h4>Total: <span>£{total}</span></h4>
+        <h4>Total: <span>£{total.toFixed(2)}</span></h4>
     </div>
 
     <button className='cart-clear-btn' onClick={() => dispatch(clear())}>Clear Cart</button>
