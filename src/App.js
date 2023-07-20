@@ -4,16 +4,28 @@ import Navigation from './components/Navigation.jsx';
 import CartContainer from './components/CartContainer.jsx';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { calculateTotals } from './features/cartSlice';
+import { calculateTotals, getCartItems } from './features/cartSlice';
 
 function App() {
 
   const dispatch = useDispatch();
-  const { cartItems } = useSelector((state) => state.cart);
+  const { cartItems, isLoading } = useSelector((state) => state.cart);
 
   useEffect(() => {
     dispatch(calculateTotals());
   }, [cartItems]);
+
+  useEffect(() => {
+    dispatch(getCartItems());
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className='loading'>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
 
   return (
     <div className="App">
