@@ -4,7 +4,7 @@ import Navigation from './components/Navigation.jsx';
 import CartContainer from './components/CartContainer.jsx';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { calculateTotals, getCartItems } from './features/cartSlice';
+import { calculateTotals, getProductItems } from './features/cartSlice';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
   }, [cartItems]);
 
   useEffect(() => {
-    dispatch(getCartItems());
+    dispatch(getProductItems());
   }, []);
 
   if (isLoading) {
